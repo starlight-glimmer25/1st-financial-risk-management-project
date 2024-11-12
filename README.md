@@ -1,50 +1,48 @@
-自动化金融风险监控系统 - Financial Risk Management Project
-项目简介
-该项目旨在开发一个自动化的金融风险监控系统，主要功能包括通过 Value at Risk (VaR) 和 Expected Shortfall (ES) 方法对市场风险进行量化和监控。系统利用历史对数收益率数据，并使用模拟数据进行回测，提供实时风险预警和准确的风险评估。通过调试和多次测试，我们实现了一个完整的风险管理框架，特别适合对资产组合进行风险监控。
-
-项目文件
-main.py：核心代码，包含对数据的清理、风险评估和回测功能。
-data_cleaning.py：包含对原始数据进行预处理的函数。
-system_VaR.csv 和 system_ES.csv：保存的 VaR 和 ES 结果，用于性能评估和回测。
-cleaned_log_returns.csv：预处理和清洗后的对数收益率数据文件。
-项目功能
-数据清洗：处理缺失值、异常值以及对数收益率的计算，保证了数据的完整性和一致性。
-自动更新风险监控：通过滚动计算 VaR 和 ES，系统可以实现自动化的风险评估，适应动态的市场数据。
-回测框架：通过计算突破率（breach rate）和均方误差（MSE），验证 VaR 和 ES 的预测性能。
-性能评估：基于 MSE 对模型的预测精度进行评估，帮助分析风险指标的可靠性。
-使用说明
-准备数据：在 financial_data_log.csv 文件中放入历史对数收益率数据。确保文件路径正确。
-运行代码：依次执行 main.py 和 data_cleaning.py，并生成 VaR 和 ES 数据。
-结果展示：代码中包含的绘图模块可以直观地展示对数收益率及风险水平的变化趋势。
-查看回测和性能评估：运行回测框架，观察模型在不同时间窗口和置信水平下的表现。
-项目改进方向
-API 实时数据集成：当前项目中模拟数据可以替换为 API 实时数据，增强系统的实时性。
-参数优化：未来可以尝试自动化调整窗口期大小及置信水平，使 VaR 和 ES 更贴合实际市场风险水平。
-多资产支持：目前仅支持少数几种资产，可以拓展支持更多资产类型，以适应更广泛的风险管理需求。
-机器学习模型：考虑引入机器学习方法，进一步提升风险预测的准确性。
-
-Automated Financial Risk Monitoring System - Financial Risk Management Project
+English Version
+Automated Financial Risk Monitoring System
 Project Overview
-This project is an automated financial risk monitoring system designed to quantify and monitor market risk using Value at Risk (VaR) and Expected Shortfall (ES) metrics. The system leverages historical log returns data and simulated data for backtesting, providing real-time risk alerts and accurate risk assessment. Through extensive debugging and testing, we have developed a comprehensive risk management framework suitable for monitoring portfolio risks.
+This project is an automated risk monitoring system designed to quantify and monitor market risk through Value at Risk (VaR) and Expected Shortfall (ES) metrics. The project utilizes both historical financial data and simulated data to simulate real-time risk assessment. This system provides a comprehensive framework for understanding and managing portfolio risk.
 
 Project Files
-main.py: Core script containing data cleaning, risk evaluation, and backtesting functions.
-data_cleaning.py: Script for preprocessing raw data and handling missing values.
-system_VaR.csv and system_ES.csv: Saved VaR and ES results for performance evaluation and backtesting.
-cleaned_log_returns.csv: The cleaned log returns data file after preprocessing.
+risk-management.py: This script covers the initial four days of tasks, including data cleaning, calculation of log returns, and preliminary VaR and ES computation. It also addresses data issues such as missing values and zero entries to ensure accurate metrics.
+systemriskvar.py: This script covers the final three days of tasks. It uses simulated data to substitute real-time API data and carries out the automated risk control process. The system monitors risk continuously and provides backtesting of VaR and ES values using various metrics such as breach rate and Mean Squared Error (MSE).
 Features
-Data Cleaning: Manages missing values, outliers, and calculates log returns to ensure data integrity and consistency.
-Automated Risk Monitoring: Calculates VaR and ES in a rolling window for continuous risk assessment, adaptable to dynamic market data.
-Backtesting Framework: Evaluates the predictive performance of VaR and ES through breach rate and Mean Squared Error (MSE).
-Performance Evaluation: Assesses the accuracy of the model’s predictions, providing insights into the reliability of the risk indicators.
+Data Cleaning: Cleans and prepares financial data for analysis, addressing zero and missing values, and calculating log returns.
+Rolling VaR and ES Calculation: Computes rolling VaR and ES values, updated periodically to capture ongoing changes in asset risk.
+Simulated Data for Real-Time Testing: Uses randomly generated data in place of API data for real-time simulation of risk monitoring.
+Backtesting Framework: Analyzes the accuracy of VaR and ES predictions based on historical breach rates and MSE for model performance evaluation.
+Comprehensive Visualization: Visualizes log returns and calculated risk levels, enabling clear insights into risk over time.
 Instructions
-Prepare Data: Place historical log returns data in the financial_data_log.csv file and ensure the file path is correct.
-Run Code: Execute main.py and data_cleaning.py to generate VaR and ES data.
-View Results: Visualize the trends in log returns and risk levels with the provided plotting module.
-Backtesting and Performance Evaluation: Run the backtesting framework to analyze the model’s performance under different time windows and confidence levels.
+Prepare Data: Ensure historical data is available in financial_data_log.csv and path locations are set correctly within each script.
+Execute Scripts:
+Run risk-management.py for initial data cleaning, calculation of log returns, and preliminary risk evaluation.
+Run systemriskvar.py for automated risk monitoring and backtesting using simulated real-time data.
+Analyze Output: View the system_VaR.csv and system_ES.csv files for saved VaR and ES metrics. These files provide insight into the calculated risk values over the project’s rolling time frames.
 Future Enhancements
-API Integration for Real-Time Data: Replace simulated data with real-time data from APIs to improve system timeliness.
-Parameter Optimization: Future efforts could include automated tuning of window size and confidence levels to align VaR and ES with real-world risk levels.
-Expanded Asset Support: Currently, the system supports a limited number of assets, but it could be expanded to accommodate a wider range of assets for broader risk management.
-Machine Learning Models: Consider integrating machine learning techniques to further enhance risk prediction accuracy.
-This README.md gives a concise overview of the project’s functionalities, file structure, usage, and potential areas for improvement, making it ideal for showcasing on your GitHub profile and resume. I hope this serves you well!
+API Integration: Replace simulated data with real-time API data to improve real-world application.
+Model Tuning: Enhance the VaR and ES accuracy by optimizing parameters such as window size and confidence level.
+Advanced Machine Learning: Introduce machine learning models for predictive risk monitoring and forecasting.
+中文版本
+自动化金融风险监控系统
+项目概述
+本项目是一个自动化风险监控系统，旨在通过 VaR（风险价值）和 ES（预期损失）量化并监控市场风险。项目结合了历史金融数据和模拟数据，实现了准实时的风险评估，为理解和管理投资组合风险提供了全面的框架。
+
+项目文件
+risk-management.py：此脚本涵盖前四天的任务，包括数据清洗、对数收益率计算以及初步的 VaR 和 ES 计算。此文件解决了数据缺失及零值等问题，以确保计算准确。
+systemriskvar.py：此脚本涵盖最后三天的任务，使用随机生成的数据替代实时 API 数据进行风险监控。系统通过连续监控风险，并基于历史突破率和均方误差（MSE）对 VaR 和 ES 值进行回测。
+主要功能
+数据清洗：对金融数据进行清洗和准备，处理零值和缺失值，并计算对数收益率。
+滚动计算 VaR 和 ES：基于滚动窗口计算 VaR 和 ES 数值，以捕捉资产风险的持续变化。
+模拟数据实时测试：使用随机生成的数据替代 API 数据，模拟实时风险监控。
+回测框架：通过历史突破率和 MSE 评估 VaR 和 ES 预测的准确性，并进行模型性能评价。
+可视化分析：展示对数收益率及风险水平的变化，提供直观的风险分析。
+使用说明
+准备数据：确保 financial_data_log.csv 文件中包含历史数据，并正确设置文件路径。
+执行脚本：
+运行 risk-management.py 完成初始的数据清洗、对数收益率计算以及基础风险评估。
+运行 systemriskvar.py 完成自动化风险监控和基于模拟数据的回测。
+分析输出：查看 system_VaR.csv 和 system_ES.csv 文件中保存的 VaR 和 ES 指标。这些文件展示了项目滚动时间框架内计算的风险值。
+未来改进方向
+API 集成：用实时 API 数据替换模拟数据，以增强系统的实际应用。
+模型调优：通过优化窗口大小和置信水平，提高 VaR 和 ES 的预测准确性。
+高级机器学习：引入机器学习模型，实现更精准的风险预测和监控。
